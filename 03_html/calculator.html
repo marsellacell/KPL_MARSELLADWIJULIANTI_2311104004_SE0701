@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        /* Gaya dasar untuk body */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        /* Container utama kalkulator */
+        .calculator {
+            width: 250px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        /* Tampilan layar kalkulator */
+        .screen {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            border: none;
+            background: #eee;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        /* Tata letak tombol */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        /* Gaya umum untuk tombol */
+        button {
+            width: 100%;
+            height: 50px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        /* Warna khusus untuk tombol operator */
+        .operator {
+            background: orange;
+            color: white;
+        }
+        /* Warna khusus untuk tombol clear */
+        .clear {
+            background: red;
+            color: white;
+        }
+        /* Warna khusus untuk tombol sama dengan */
+        .equal {
+            background: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Struktur utama kalkulator -->
+    <div class="calculator">
+        <!-- Layar tampilan input -->
+        <input type="text" class="screen" id="screen" disabled>
+        <!-- Tombol angka dan operator -->
+        <div class="buttons">
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="appendOperator('/')">/</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="appendOperator('*')">*</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button class="clear" onclick="clearScreen()">C</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+            <button class="equal" onclick="calculateResult()" colspan="4">=</button>
+        </div>
+    </div>
+    
+    <script>
+        // Ambil elemen layar kalkulator
+        let screen = document.getElementById("screen");
+        let currentInput = "";
+
+        // Fungsi untuk menambahkan angka ke layar
+        function appendNumber(number) {
+            currentInput += number;
+            screen.value = currentInput;
+        }
+
+        // Fungsi untuk menambahkan operator matematika
+        function appendOperator(operator) {
+            if (currentInput !== "" && !isNaN(currentInput[currentInput.length - 1])) {
+                currentInput += operator;
+                screen.value = currentInput;
+            }
+        }
+
+        // Fungsi untuk menghapus seluruh input
+        function clearScreen() {
+            currentInput = "";
+            screen.value = "";
+        }
+
+        // Fungsi untuk menghitung hasil ekspresi matematika
+        function calculateResult() {
+            try {
+                currentInput = eval(currentInput).toString(); // Menggunakan eval untuk menghitung ekspresi
+                screen.value = currentInput;
+            } catch (error) {
+                screen.value = "Error"; // Menampilkan error jika terjadi kesalahan input
+                currentInput = "";
+            }
+        }
+    </script>
+</body>
+</html>
