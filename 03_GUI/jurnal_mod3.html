@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator GUI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: gray;
+            font-family: 'Google Sans', sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: gray;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .calculator {
+            display: grid;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            margin: 2px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #output {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="output">0</div>
+        <div id="calculator" class="calculator"></div>
+    </div>
+
+    <script>
+        let NIM_PRAKTIKAN = 123456; // Ganti dengan NIM Anda
+        let layoutType = NIM_PRAKTIKAN % 3;
+        let buttons = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "0", "="];
+        let calculator = document.getElementById("calculator");
+
+        function createLayout() {
+            let layout = "";
+            if (layoutType === 0) {
+                layout = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"], ["+", "0", "="]];
+            } else if (layoutType === 1) {
+                layout = [["1", "2", "3", "+"], ["4", "5", "6", "="], ["7", "8", "9"], ["0"]];
+            } else {
+                layout = [["+", "=", "0"], ["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]];
+            }
+
+            layout.forEach(row => {
+                let rowDiv = document.createElement("div");
+                rowDiv.className = "row";
+                row.forEach(char => {
+                    let button = document.createElement("button");
+                    button.textContent = char;
+                    button.onclick = () => onButtonClick(char);
+                    rowDiv.appendChild(button);
+                });
+                calculator.appendChild(rowDiv);
+            });
+        }
+
+        function onButtonClick(value) {
+            let output = document.getElementById("output");
+            if (value === "=") {
+                output.textContent = eval(output.textContent);
+            } else {
+                if (output.textContent === "0") {
+                    output.textContent = value;
+                } else {
+                    output.textContent += value;
+                }
+            }
+        }
+
+        createLayout();
+    </script>
+</body>
+</html>
