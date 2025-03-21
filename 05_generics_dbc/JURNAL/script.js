@@ -10,9 +10,6 @@ class Penjumlahan {
 
 const penjumlahan = new Penjumlahan();
 const hasil = penjumlahan.jumlahTigaAngka(23.0, 11.0, 4.0); // Menggunakan tipe data double
-<<<<<<< HEAD
-console.log(`Hasil penjumlahan: ${hasil}`);
-=======
 console.log(`Hasil penjumlahan: ${hasil}`);
 
 class SimpleDataBase {
@@ -38,4 +35,3 @@ database.addNewData(23.0); // Menggunakan tipe data double
 database.addNewData(11.0);
 database.addNewData(4.0);
 database.printAllData();
->>>>>>> implementasi-generic-class
