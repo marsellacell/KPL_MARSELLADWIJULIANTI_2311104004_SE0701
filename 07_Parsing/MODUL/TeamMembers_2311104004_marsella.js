@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('jurnal7_2_<2311104004_marsella>.json')
+    fetch('jurnal7_2_2311104004_marsella.json')
         .then(response => response.json())
         .then(data => {
             const teamMembersDiv = document.getElementById('team-members');
