@@ -1,0 +1,25 @@
+{
+  "members" : [
+    {
+       "firstName": "Viona Aziz",
+       "lastName": "Syahputri",
+       "gender": "female",
+       "age": 19,
+       "nim": "2311104008"
+    },
+    {
+       "firstName": "Isabelle Putri",
+       "lastName": "Ardini",
+       "gender": "female",
+       "age": 19,
+       "nim": "2311104030"
+    },
+    {
+       "firstName": "Shilfi",
+       "lastName": "Habibah",
+       "gender": "female",
+       "age": 20,
+       "nim": "2311104002"
+    }
+  ]
+}
