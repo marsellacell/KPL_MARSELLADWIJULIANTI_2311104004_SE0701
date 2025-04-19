@@ -1,0 +1,32 @@
+{
+    "courses": [
+        {
+            "code": "CRI2C4",
+            "name": "Konstruksi Perangkat Lunak"
+        },
+        {
+            "code": "CRI2B3",
+            "name": "Pemrograman Web"
+        },
+        {
+            "code": "UNI2C2",
+            "name": "Kecerdasan Buatan"
+        },
+        {
+            "code": "CRI2A3",
+            "name": "Rekayasa Perangkat Lunak"
+        },
+        {
+            "code": "UNI2B1",
+            "name": "Bahasa Indonesia"
+        },
+        {
+            "code": "SEJ2A1",
+            "name": "Pancasila"
+        },
+        {
+            "code": "MAT2B3",
+            "name": "Statistika"
+        }
+    ]
+}
