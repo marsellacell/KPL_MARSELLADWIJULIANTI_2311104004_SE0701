@@ -1,0 +1,25 @@
+{
+  "name": "management-mahasiswa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "Node.js",
+    "Express",
+    "Mysql"
+  ],
+  "author": "rvnkrwn@gmail.com",
+  "license": "ISC",
+  "description": "Ini adalah aplikasi management mahasiswa",
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.6.0"
+  }
+}
