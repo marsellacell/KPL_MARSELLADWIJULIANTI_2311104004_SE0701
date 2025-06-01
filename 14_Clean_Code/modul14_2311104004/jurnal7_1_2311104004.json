@@ -1,0 +1,16 @@
+{
+  "firstName": "Marsella",
+  "lastName": "Dwi Julianti",
+  "gender": "Female",
+  "age": 20,
+  "address": {
+    "streetAddress": "Jl. Merdeka No. 123",
+    "city": "Purwokerto",
+    "state": "Jawa Tengah"
+  },
+  "courses": [
+    { "code": "CS101", "name": "Pemrograman Dasar" },
+    { "code": "CS102", "name": "Struktur Data" },
+    { "code": "CS103", "name": "Basis Data" }
+  ]
+}
