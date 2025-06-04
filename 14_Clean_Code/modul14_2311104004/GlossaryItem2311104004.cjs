@@ -1,32 +1,34 @@
 const fs = require('fs');
 
+/**
+ * Class untuk membaca dan menampilkan glossary dari file JSON.
+ */
 class GlossaryItem2311104004 {
-    static ReadJSON() {
-        // Membaca file JSON
-        fs.readFile('jurnal7_3_2311104004.json', 'utf8', (err, data) => {
-            if (err) {
-                console.log('Error reading the file:', err);
-                return;
-            }
+  /**
+   * Membaca file glossary JSON dan menampilkan GlossEntry.
+   */
+  static readJson() {
+    fs.readFile('jurnal7_3_2311104004.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error('Gagal membaca file JSON:', err);
+        return;
+      }
 
-            // Parse data JSON
-            const glossaryData = JSON.parse(data);
+      const glossaryData = JSON.parse(data);
+      const entry = glossaryData.glossary.GlossDiv.GlossList.GlossEntry;
 
-            // Akses dan tampilkan bagian GlossEntry
-            const glossEntry = glossaryData.glossary.GlossDiv.GlossList.GlossEntry;
-            
-            console.log("GlossEntry:");
-            console.log(`ID: ${glossEntry.ID}`);
-            console.log(`SortAs: ${glossEntry.SortAs}`);
-            console.log(`GlossTerm: ${glossEntry.GlossTerm}`);
-            console.log(`Acronym: ${glossEntry.Acronym}`);
-            console.log(`Abbrev: ${glossEntry.Abbrev}`);
-            console.log(`GlossDef Para: ${glossEntry.GlossDef.para}`);
-            console.log(`GlossSeeAlso: ${glossEntry.GlossDef.GlossSeeAlso.join(', ')}`);
-            console.log(`GlossSee: ${glossEntry.GlossSee}`);
-        });
-    }
+      console.log('\n=== Glossary Entry ===');
+      console.log(`ID           : ${entry.ID}`);
+      console.log(`SortAs       : ${entry.SortAs}`);
+      console.log(`GlossTerm    : ${entry.GlossTerm}`);
+      console.log(`Acronym      : ${entry.Acronym}`);
+      console.log(`Abbrev       : ${entry.Abbrev}`);
+      console.log(`GlossDef     : ${entry.GlossDef.para}`);
+      console.log(`GlossSeeAlso : ${entry.GlossDef.GlossSeeAlso.join(', ')}`);
+      console.log(`GlossSee     : ${entry.GlossSee}`);
+    });
+  }
 }
 
-// Panggil method untuk membaca dan menampilkan JSON
-GlossaryItem2311104004.ReadJSON();
+// Jalankan fungsi
+GlossaryItem2311104004.readJson();

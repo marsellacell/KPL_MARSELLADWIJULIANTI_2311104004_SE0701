@@ -1,27 +1,34 @@
 const fs = require('fs');
 
-class DataMahasiswa_2311104004 {
-  static readJSON() {
+/**
+ * Class untuk membaca dan menampilkan data mahasiswa dari file JSON.
+ */
+class DataMahasiswa2311104004 {
+  /**
+   * Membaca file JSON mahasiswa dan menampilkannya ke console.
+   */
+  static readJson() {
     fs.readFile('jurnal7_1_2311104004.json', 'utf-8', (err, data) => {
       if (err) {
-        console.error('Gagal baca file JSON:', err);
+        console.error('Gagal membaca file JSON:', err);
         return;
       }
 
-      const mahasiswa = JSON.parse(data);
+      const student = JSON.parse(data);
 
       console.log('\n=== Data Mahasiswa ===');
-      console.log(`Nama     : ${mahasiswa.firstName} ${mahasiswa.lastName}`);
-      console.log(`Gender   : ${mahasiswa.gender}`);
-      console.log(`Umur     : ${mahasiswa.age}`);
-      console.log(`Alamat   : ${mahasiswa.address.streetAddress}, ${mahasiswa.address.city}, ${mahasiswa.address.state}`);
+      console.log(`Nama     : ${student.firstName} ${student.lastName}`);
+      console.log(`Gender   : ${student.gender}`);
+      console.log(`Umur     : ${student.age}`);
+      console.log(`Alamat   : ${student.address.streetAddress}, ${student.address.city}, ${student.address.state}`);
 
       console.log('\nMata Kuliah:');
-      mahasiswa.courses.forEach((course, index) => {
+      student.courses.forEach((course, index) => {
         console.log(` ${index + 1}. [${course.code}] ${course.name}`);
       });
     });
   }
 }
 
-DataMahasiswa_2311104004.readJSON();
+// Jalankan fungsi
+DataMahasiswa2311104004.readJson();
