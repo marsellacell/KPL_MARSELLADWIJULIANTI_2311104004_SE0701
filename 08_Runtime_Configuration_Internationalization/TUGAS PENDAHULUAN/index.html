@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Runtime Configuration - Covid Check</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Covid Check</h2>
+    <p id="suhu-label">Berapa suhu badan anda saat ini?</p>
+    <input type="number" id="suhu" step="0.1"><br>
+
+    <p>Berapa hari yang lalu (perkiraan) anda terakhir memiliki gejala demam?</p>
+    <input type="number" id="hari"><br>
+
+    <button onclick="cek()">Cek</button>
+    <button onclick="ubahSatuan()">Ubah Satuan</button>
+
+    <p id="hasil"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

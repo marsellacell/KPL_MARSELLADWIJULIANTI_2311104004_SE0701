@@ -1,0 +1,11 @@
+{
+    "name": "parsing-demo",
+    "version": "1.0.0",
+    "description": "Demo berbagai jenis parsing: JSON, Query String, URL, CSV, AST, HTML",
+    "type": "module",
+    "dependencies": {
+      "acorn": "^8.14.1",
+      "cheerio": "^1.0.0",
+      "csv-parser": "^3.2.0"
+    }
+  }

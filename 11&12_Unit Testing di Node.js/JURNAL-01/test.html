@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Unit Test</title></head>
+<body>
+  <script src="script.js"></script>
+  <script>
+    function testCariNilaiPangkat() {
+      console.assert(CariNilaiPangkat(2, 3) === 8, "Test biasa gagal");
+      console.assert(CariNilaiPangkat(5, 0) === 1, "Test pangkat 0 gagal");
+      console.assert(CariNilaiPangkat(4, -2) === -1, "Test negatif gagal");
+      console.assert(CariNilaiPangkat(101, 2) === -2, "Test a > 100 gagal");
+      console.assert(CariNilaiPangkat(9, 11) === -2, "Test b > 10 gagal");
+      console.assert(CariNilaiPangkat(9, 30) === -3, "Test overflow gagal");
+      console.log("Semua test selesai.");
+    }
+
+    testCariNilaiPangkat();
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "firstName": "marsella dwi",
+    "lastName": "julianti",
+    "gender": "female",
+    "age": 20,
+    "address": {
+        "streetAddress": "Telkom",
+        "city": "Purwokerto",
+        "state": "Central Java"
+    },
+    "courses": [
+        { "code": "CRI2C4", "name": "Konstruksi Perangkat Lunak" },
+        { "code": "CRI2XX", "name": "Konstruksi Perangkat Lunak" }
+    ]
+ }

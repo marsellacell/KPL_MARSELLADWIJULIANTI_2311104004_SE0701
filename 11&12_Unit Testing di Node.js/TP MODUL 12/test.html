@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Test - CariTandaBilangan</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script>
+        function testCariTandaBilangan() {
+            console.assert(CariTandaBilangan(-5) === "Negatif", "Test 1 Gagal");
+            console.assert(CariTandaBilangan(0) === "Nol", "Test 2 Gagal");
+            console.assert(CariTandaBilangan(10) === "Positif", "Test 3 Gagal");
+            console.log("Semua test selesai.");
+        }
+
+        testCariTandaBilangan();
+    </script>
+</body>
+</html>
